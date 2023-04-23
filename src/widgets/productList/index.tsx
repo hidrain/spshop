@@ -3,7 +3,7 @@ import ProductPreview from 'entities/product/ui/productPreview'
 import { productAPI } from 'shared/api/productService'
 import { Wrapper } from './style'
 import { skeletons } from './lib/skeletons'
-import CartButton from 'features/ui/cartButton'
+import AddToCartButton from 'features/ui/addToCartButton'
 
 type Props = {}
 
@@ -15,7 +15,7 @@ const ProductList = (props: Props) => {
         <Wrapper>
             {isLoading && skeletons}
             {products && products.map(product =>
-                <ProductPreview product={product} key={product.id} children={<CartButton />} />
+                <ProductPreview product={product} key={product.id} children={<AddToCartButton />} />
             )}
         </Wrapper>
     )

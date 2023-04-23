@@ -1,5 +1,8 @@
+import ProductList from "widgets/productList";
+
 const MainPage = () => {
-    return <div>Main Page</div>;
+    return (
+        <ProductList />);
 };
 
 export default MainPage;

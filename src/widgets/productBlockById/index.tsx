@@ -1,5 +1,5 @@
 import ProductCard from 'entities/product/ui/productCard'
-import CartButton from 'features/ui/cartButton'
+import AddToCartButton from 'features/ui/addToCartButton'
 import { useParams } from 'react-router-dom'
 import { productAPI } from 'shared/api/productService'
 import { Wrapper } from './style'
@@ -19,7 +19,7 @@ const ProductBlockById = (props: Props) => {
             {product &&
                 <>
                     <BackButton />
-                    <ProductCard product={product} key={product.id} children={<CartButton />} />
+                    <ProductCard product={product} key={product.id} children={<AddToCartButton />} />
                 </>
             }
         </Wrapper>

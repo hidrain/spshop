@@ -4,7 +4,7 @@ import { Button } from './style'
 
 type Props = {}
 
-const CartButton = (props: Props) => {
+const AddToCartButton = (props: Props) => {
     return (
         <Button>
             <CartIcon />
@@ -12,4 +12,4 @@ const CartButton = (props: Props) => {
     )
 }
 
-export default CartButton
+export default AddToCartButton
