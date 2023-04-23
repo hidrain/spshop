@@ -1,24 +1,27 @@
-import { ProductType } from 'entities/product/model/productType'
-import React from 'react'
-import CartButton from 'shared/ui/cartButton'
-import { CardWrapper, ProductImg, ProductInfo } from './style'
+import { ProductType } from 'shared/model/productType'
+import React, { ReactNode } from 'react'
+import { ProductImg, ProductInfo, Wrapper, PriceWrapper } from './style'
 
 type Props = {
-    product: ProductType
+    product: ProductType,
+    children: ReactNode,
 }
 
-const ProductCard = ({ product }: Props) => {
+const ProductCard = ({ product, children }: Props) => {
     return (
-        <CardWrapper>
+        <Wrapper>
             <ProductImg>
                 <img src={product.imgUrl} alt='productImage' />
             </ProductImg>
             <ProductInfo>
                 <p>{product.name}</p>
-                <CartButton />
-                <span>$ {product.price}</span>
+                <span>{product.modelNumber}</span>
             </ProductInfo>
-        </CardWrapper>
+            <PriceWrapper>
+                {children}
+                <span>$ {product.price}</span>
+            </PriceWrapper>
+        </Wrapper>
     )
 }
 export default ProductCard

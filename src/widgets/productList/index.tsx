@@ -1,8 +1,9 @@
 import React from 'react'
-import ProductCard from 'entities/product/ui/productCard'
-import { productAPI } from './api/productService'
+import ProductPreview from 'entities/product/ui/productPreview'
+import { productAPI } from 'shared/api/productService'
 import { Wrapper } from './style'
 import { skeletons } from './lib/skeletons'
+import CartButton from 'features/ui/cartButton'
 
 type Props = {}
 
@@ -14,7 +15,7 @@ const ProductList = (props: Props) => {
         <Wrapper>
             {isLoading && skeletons}
             {products && products.map(product =>
-                <ProductCard product={product} key={product.id} />
+                <ProductPreview product={product} key={product.id} children={<CartButton />} />
             )}
         </Wrapper>
     )

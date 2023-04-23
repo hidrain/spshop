@@ -1,5 +1,5 @@
 import React from 'react'
-import { CartIcon } from '../cartIcon/cartIcon'
+import { CartIcon } from 'shared/ui/cartIcon/cartIcon'
 import { Button } from './style'
 
 type Props = {}

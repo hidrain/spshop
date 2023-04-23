@@ -1,5 +1,9 @@
+import ProductBlockById from "widgets/productBlockById";
+
 const ProductPage = () => {
-    return <div>Product Page</div>;
+    return (
+        <ProductBlockById />
+    )
 };
 
 export default ProductPage

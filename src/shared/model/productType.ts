@@ -1,7 +1,7 @@
 export interface ProductType {
     id: number,
-    name: string,
     imgUrl: string,
+    name: string,
     modelNumber: string,
     price: number,
 }

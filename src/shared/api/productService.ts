@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
-import { ProductType } from 'entities/product/model/productType';
+import { ProductType } from '../model/productType';
 
 export const productAPI = createApi({
     reducerPath: 'productAPI',
@@ -7,8 +7,14 @@ export const productAPI = createApi({
     endpoints: (build) => ({
         fetchAllProducts: build.query<ProductType[], number>({
             query: (limit: number = 6) => ({
-                url: '/items',
+                url: `/items`,
                 params: { _limit: limit }
+            }),
+        }),
+        fetchProductById: build.query<ProductType, number>({
+            query: (id: number ) => ({
+                url: `/items/${id}`,
+                params: { _id: id }
             }),
         }),
     })

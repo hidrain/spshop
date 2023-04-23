@@ -1,28 +1,28 @@
-import { ProductType } from './../../../entities/product/model/productType';
+import { ProductType } from '../model/productType';
 import { fetchProducts} from './actionCreators';
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-interface UserState {
-    users: ProductType[],
+interface ProductsState {
+    products: ProductType[],
     isLoading: boolean,
     error: string,
 }
 
-const initialState: UserState = {
-    users: [],
+const initialState: ProductsState = {
+    products: [],
     isLoading: false,
     error: '',
 }
 
-export const ProductSlice = createSlice({
-    name: 'user',
+export const ProductsSlice = createSlice({
+    name: 'products',
     initialState,
     reducers: {},
     extraReducers: {
         [fetchProducts.fulfilled.type]: (state, action: PayloadAction<ProductType[]>) => {
             state.isLoading = false
             state.error = ''
-            state.users = action.payload
+            state.products = action.payload
         },
         [fetchProducts.pending.type]: (state) => {
             state.isLoading = true
@@ -34,4 +34,4 @@ export const ProductSlice = createSlice({
     }
 })
 
-export default ProductSlice.reducer
+export default ProductsSlice.reducer
