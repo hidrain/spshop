@@ -1,10 +1,10 @@
 import { ProductType } from 'shared/model/productType'
-import React, { ReactNode } from 'react'
+import React, { ReactElement } from 'react'
 import { ProductImg, ProductInfo, Wrapper, PriceWrapper } from './style'
 
 type Props = {
     product: ProductType,
-    children: ReactNode,
+    children: ReactElement,
 }
 
 const ProductCard = ({ product, children }: Props) => {

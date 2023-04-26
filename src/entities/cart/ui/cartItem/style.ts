@@ -2,39 +2,38 @@ import styled from "styled-components"
 
 export const Wrapper = styled.div`
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    width: 250px;
-    height: 300px;
-    border: 1px solid #E7E7E7;
-    border-radius: 3px;
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-        transform: scale(1.05);
-    }
+    grid-template-columns: 100px 1fr 30px;
+    height: 100px;
+    padding: 0 40px;
 `
-export const ProductImg = styled.div`
-    height: 130px;
-    width: 228px; 
-    justify-self: center;  
-    margin: 29px 0;
+export const ProductImg = styled.div` 
+    display: grid;  
+    align-items: center;
+    justify-content: center;
+ 
     & img {
-        width: 100%;
-        height: 100%;
+        height: 51px;
     }
 `
 export const ProductInfo = styled.div`
     display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
-    margin: 0 15px;
-
-    & p {
-        grid-column: 1/3;
-        padding-bottom: 12px;
-        font-weight: ${props => props.theme.weight.bold};
-    }
+    grid-template-rows: 32px 1fr;
+    gap: 15px;
 `
+export const ProductCalc = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    height: max-content;
+`
+export const ProductCounter = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-right: 25px;
+    justify-items: center;
+    align-items: center;
+`
+
+
 
 

@@ -1,26 +1,32 @@
 import { ProductType } from 'shared/model/productType'
-import React from 'react'
-import { Wrapper, ProductImg, ProductInfo } from './style'
+import React, { ReactElement } from 'react'
+import { Wrapper, ProductImg, ProductInfo, ProductCalc, ProductCounter } from './style'
 
 type Props = {
-    product: ProductType
+    product: ProductType,
+    plus: ReactElement,
+    minus: ReactElement,
+    close: ReactElement,
 }
 
-const CartItem = ({ product }: Props) => {
+const CartItem = ({ product, plus, minus, close }: Props) => {
     return (
         <Wrapper>
-            <div></div>
-
-
-
-            {/* <ProductImg>
+            <ProductImg>
                 <img src={product.imgUrl} alt='productImage' />
             </ProductImg>
             <ProductInfo>
-                <p>{product.name}</p>
-                <CartButton />
-                <span>$ {product.price}</span>
-            </ProductInfo> */}
+                <div>{product.name}</div>
+                <ProductCalc>
+                    <ProductCounter>
+                        <span>{plus}</span>
+                        <span>1</span>
+                        <span>{minus}</span>
+                    </ProductCounter>
+                    <div>$ {product.price}</div>
+                </ProductCalc>
+            </ProductInfo>
+            <div>{close}</div>
         </Wrapper>
     )
 }

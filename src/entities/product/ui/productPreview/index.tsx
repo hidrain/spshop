@@ -1,11 +1,11 @@
 import { ProductType } from 'shared/model/productType'
-import React, { ReactNode } from 'react'
+import React, { ReactElement } from 'react'
 import { Wrapper, ProductImg, ProductInfo } from './style'
 import { Link } from 'react-router-dom'
 
 type Props = {
     product: ProductType,
-    children: ReactNode,
+    children: ReactElement,
 }
 
 const ProductPreview = ({ product, children }: Props) => {

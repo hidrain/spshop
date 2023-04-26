@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const Wrapper = styled.div`
     display: grid;
     grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
     width: 250px;
     height: 300px;
     border: 1px solid #E7E7E7;
