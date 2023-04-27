@@ -1,10 +1,14 @@
+import { useSelector } from 'react-redux'
+import { selectCart } from 'shared/api/cartSlice'
 import { Wrapper, Ellipse } from './style'
 
-type Props = {
-    count: number
-}
+type Props = {}
 
-export const CartWithCounter = ({ count = 0 }: Props) => {
+export const CartWithCounter = (props: Props) => {
+
+    const { products } = useSelector(selectCart)
+    const totalCount = products.reduce((sum, item) => sum + item.count, 0)
+
     return (
         <Wrapper>
             <svg
@@ -43,7 +47,7 @@ export const CartWithCounter = ({ count = 0 }: Props) => {
             18.5469 19.5 18.75 19.5Z" fill="black" />
             </svg>
             <Ellipse>
-                {count}
+                {totalCount}
             </Ellipse>
 
         </Wrapper>

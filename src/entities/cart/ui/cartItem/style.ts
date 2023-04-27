@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 100px 1fr 30px;
     height: 100px;
-    padding: 0 40px;
 `
 export const ProductImg = styled.div` 
     display: grid;  

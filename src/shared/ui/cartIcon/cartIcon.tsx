@@ -1,3 +1,5 @@
+type Props = {}
+
 export const CartIcon = () => {
     return (
         <svg

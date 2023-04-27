@@ -12,7 +12,7 @@ const Header = (props: Props) => {
             <Link to='/'>
                 <img src={Logo} alt='logo' />
             </Link>
-            <CartWithCounter count={1} />
+            <CartWithCounter />
         </HeaderWrapper>
     )
 }

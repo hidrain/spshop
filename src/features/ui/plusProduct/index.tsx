@@ -1,12 +1,25 @@
 import React from 'react'
 import { Plus } from 'shared/ui/plus/plus'
 import SvgButton from 'shared/ui/svgButton'
+import { ProductType } from 'shared/model/productType'
+import { useDispatch } from 'react-redux'
+import { plusProduct } from 'shared/api/cartSlice'
 
-type Props = {}
 
-const PlusProduct = (props: Props) => {
+type Props = {
+    item: ProductType,
+}
+
+const PlusProduct = ({ item }: Props) => {
+
+    const dispatch = useDispatch()
+
+    const handlePlusProduct = (item: ProductType) => {
+        dispatch(plusProduct(item))
+    }
+
     return (
-        <SvgButton>
+        <SvgButton count={item.count}>
             <Plus />
         </SvgButton>
     )

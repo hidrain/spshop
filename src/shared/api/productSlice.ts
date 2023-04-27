@@ -14,7 +14,7 @@ const initialState: ProductsState = {
     error: '',
 }
 
-export const ProductsSlice = createSlice({
+export const productsSlice = createSlice({
     name: 'products',
     initialState,
     reducers: {},
@@ -34,4 +34,4 @@ export const ProductsSlice = createSlice({
     }
 })
 
-export default ProductsSlice.reducer
+export default productsSlice.reducer

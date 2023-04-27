@@ -1,33 +1,33 @@
 import CartItem from 'entities/cart/ui/cartItem'
 import DeleteProduct from 'features/ui/deleteProduct'
-import MinusProduct from 'features/ui/minusProduct/indext'
+import MinusProduct from 'features/ui/minusProduct'
 import PlusProduct from 'features/ui/plusProduct'
-import React from 'react'
-import { productAPI } from 'shared/api/productService'
+import { useSelector } from 'react-redux'
+import { selectCart } from 'shared/api/cartSlice'
 import { Wrapper, CartWrapper, PriceWrapper } from './style'
 
 const CartBlock = () => {
 
-    const { data: products } = productAPI.useFetchAllProductsQuery(2)
+    const { products, totalPrice } = useSelector(selectCart)
 
     return (
         <Wrapper>
             <CartWrapper>
                 <p>My basket</p>
-                {products && products.map(product =>
+                {products.map(product =>
                     <CartItem
                         product={product}
                         key={product.id}
-                        plus={<PlusProduct />}
-                        minus={<MinusProduct />}
-                        close={<DeleteProduct />}
+                        plus={<PlusProduct item={product} />}
+                        minus={<MinusProduct item={product} />}
+                        close={<DeleteProduct item={product} />}
                     />
                 )}
             </CartWrapper>
             <PriceWrapper>
                 <div>
                     <p>Subtotal</p>
-                    <span>$ 1850</span>
+                    <span>$ {totalPrice}</span>
                 </div>
                 <div>
                     <p>Tax</p>
@@ -39,7 +39,7 @@ const CartBlock = () => {
                 </div>
                 <div>
                     <p>Total</p>
-                    <span>$ 2100</span>
+                    <span>$ {totalPrice + 250}</span>
                 </div>
             </PriceWrapper>
         </Wrapper>

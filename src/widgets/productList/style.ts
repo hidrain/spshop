@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
     justify-items: center;
     justify-self: center;
 }
-    @media (max-width: 1200px) {
+    @media (max-width: 1300px) {
         grid-template-columns: repeat(2,1fr);
     }
     @media (max-width: 410px) {

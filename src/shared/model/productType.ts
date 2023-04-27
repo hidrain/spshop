@@ -4,4 +4,5 @@ export interface ProductType {
     name: string,
     modelNumber: string,
     price: number,
+    count: number,
 }

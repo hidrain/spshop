@@ -5,6 +5,7 @@ export const Button = styled.button`
     border: none;
     background: none;
     align-items: center;
+    cursor: pointer;
 
     &:hover svg path{
         fill: #7a7979;
