@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     gap: 50px 70px;
     justify-items: center;
     justify-self: center;
+    align-content: start;
 }
     @media (max-width: 1300px) {
         grid-template-columns: repeat(2,1fr);

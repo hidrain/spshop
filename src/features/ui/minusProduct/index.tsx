@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { minusProduct } from 'shared/api/cartSlice'
 import { ProductType } from 'shared/model/productType'
 import { Minus } from 'shared/ui/minus/minus'
-import SvgButton from 'shared/ui/svgButton'
+import { MinusButton } from './style'
 
 type Props = {
     item: ProductType,
@@ -18,9 +18,14 @@ const MinusProduct = ({ item }: Props) => {
     }
 
     return (
-        <SvgButton count={item.count}>
+        <MinusButton
+            count={item.count}
+            disabled={item.count === 1}
+            onClick={() => handleMinusProduct(item)}
+            isDisabled={item.count === 1}
+        >
             <Minus />
-        </SvgButton>
+        </MinusButton>
     )
 }
 

@@ -1,10 +1,9 @@
 import React from 'react'
 import { Plus } from 'shared/ui/plus/plus'
-import SvgButton from 'shared/ui/svgButton'
 import { ProductType } from 'shared/model/productType'
 import { useDispatch } from 'react-redux'
 import { plusProduct } from 'shared/api/cartSlice'
-
+import { PlusButton } from './style'
 
 type Props = {
     item: ProductType,
@@ -19,9 +18,12 @@ const PlusProduct = ({ item }: Props) => {
     }
 
     return (
-        <SvgButton count={item.count}>
+        <PlusButton
+            count={item.count}
+            onClick={() => handlePlusProduct(item)}
+        >
             <Plus />
-        </SvgButton>
+        </PlusButton>
     )
 }
 

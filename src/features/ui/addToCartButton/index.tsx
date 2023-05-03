@@ -1,4 +1,3 @@
-import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addProduct } from 'shared/api/cartSlice'
 import { ProductType } from 'shared/model/productType'
@@ -15,10 +14,10 @@ const AddToCartButton = ({ item }: Props) => {
 
     const handleAddProduct = (item: ProductType) => {
         dispatch(addProduct(item))
-        console.log('click')
     }
+
     return (
-        <Button onClick={() => handleAddProduct(item)}>
+        <Button onClick={() => handleAddProduct(item)} >
             <CartIcon />
         </Button>
     )

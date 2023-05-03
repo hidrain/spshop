@@ -7,6 +7,7 @@ import { CartWithCounter } from 'features/ui/cartWithCounter'
 type Props = {}
 
 const Header = (props: Props) => {
+
     return (
         <HeaderWrapper>
             <Link to='/'>

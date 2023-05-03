@@ -1,6 +1,10 @@
 import styled from "styled-components"
 
-export const Button = styled.button`
+interface ButtonProps  {
+    count: number
+}
+
+export const PlusButton = styled.button<ButtonProps>`
     display: grid;
     border: none;
     background: none;
@@ -8,6 +12,6 @@ export const Button = styled.button`
     cursor: pointer;
 
     &:hover svg path{
-        fill: #7a7979;
+        fill: #3366FF;
     }
 `

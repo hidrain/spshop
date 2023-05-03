@@ -10,4 +10,10 @@ export const Button = styled.button`
     line-height: 24px;
     margin-top: 30px;
     cursor: pointer;
+
+    &:hover {
+        background-color: #FFFFFF;
+        box-shadow: 0 0 4px #3366FF;
+        color: #3366FF;
+    }
 `
