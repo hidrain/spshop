@@ -27,7 +27,7 @@ const CartItem = ({ product, plus, minus, close }: Props) => {
                     <div>$ {product.price * product.count}</div>
                 </ProductCalc>
             </ProductInfo>
-            <div> {close}</div>
+            <div>{close}</div>
         </Wrapper>
     )
 }

@@ -1,4 +1,6 @@
-type Props = {}
+type Props = {
+    ref: any
+}
 
 export const CartIcon = () => {
     return (
@@ -7,7 +9,8 @@ export const CartIcon = () => {
             width="24"
             height="21"
             viewBox="0 0 24 21"
-            fill="none">
+            fill="none"
+            className="cartIcon">
             <path d="M18.75 16.5C19.0625 16.5 19.3555 16.5586 19.6289 16.6758C19.9023 16.793 
 20.1406 16.9531 20.3438 17.1562C20.5469 17.3594 20.707 17.5977 20.8242 
 17.8711C20.9414 18.1445 21 18.4375 21 18.75C21 19.0625 20.9414 19.3555 20.8242 
