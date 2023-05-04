@@ -4,14 +4,19 @@ import MinusProduct from 'features/ui/minusProduct'
 import PlusProduct from 'features/ui/plusProduct'
 import { useSelector } from 'react-redux'
 import { selectCart } from 'shared/api/cartSlice'
-import { Wrapper, CartWrapper, PriceWrapper } from './style'
+import { CartWrapper, PriceWrapper, Separater } from './style'
 
-const CartBlock = () => {
+type Props = {
+    children?: React.ReactElement
+}
+
+const CartBlock = ({ children }: Props) => {
 
     const { products, totalPrice } = useSelector(selectCart)
 
     return (
-        <Wrapper>
+        <>
+            {children}
             <CartWrapper>
                 <p>My basket</p>
                 {products.map(product =>
@@ -24,6 +29,7 @@ const CartBlock = () => {
                     />
                 )}
             </CartWrapper>
+            <Separater />
             <PriceWrapper>
                 <div>
                     <p>Subtotal</p>
@@ -42,7 +48,7 @@ const CartBlock = () => {
                     <span>$ {totalPrice + 250}</span>
                 </div>
             </PriceWrapper>
-        </Wrapper>
+        </>
     )
 }
 

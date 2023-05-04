@@ -2,15 +2,19 @@ import { useSelector } from 'react-redux'
 import { selectCart } from 'shared/api/cartSlice'
 import { Wrapper, Ellipse } from './style'
 
-type Props = {}
+type Props = {
+    click: boolean,
+    setClick: (click: boolean) => void,
 
-export const CartWithCounter = (props: Props) => {
+}
+
+export const CartWithCounter = ({ click, setClick }: Props) => {
 
     const { products } = useSelector(selectCart)
     const totalCount = products.reduce((sum, item) => sum + item.count, 0)
 
     return (
-        <Wrapper>
+        <Wrapper onClick={() => { setClick(!click) }}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -49,7 +53,6 @@ export const CartWithCounter = (props: Props) => {
             <Ellipse>
                 {totalCount}
             </Ellipse>
-
         </Wrapper>
     )
 }

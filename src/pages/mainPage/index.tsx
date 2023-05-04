@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectCart } from "shared/api/cartSlice";
-import CartBlock from "widgets/cartBlock";
 import ProductList from "widgets/productList";
+import RightCartBlock from "widgets/rightCartBlock";
 import { Wrapper } from './style'
 
 
@@ -12,7 +12,7 @@ const MainPage = () => {
     return (
         <Wrapper>
             <ProductList />
-            {products.length > 0 && <CartBlock />}
+            {products.length > 0 && <RightCartBlock />}
         </Wrapper>
     );
 };

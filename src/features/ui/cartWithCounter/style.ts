@@ -6,6 +6,7 @@ export const Wrapper = styled.button`
     background: none;
     width: fit-content;
     cursor: pointer;
+    z-index: 20;
 `
 
 export const Ellipse = styled.span`

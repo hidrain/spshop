@@ -30,7 +30,3 @@ const DeleteProduct = ({ item }: Props) => {
 }
 
 export default DeleteProduct
-
-function removeProducts(item: ProductType): any {
-    throw new Error('Function not implemented.')
-}
