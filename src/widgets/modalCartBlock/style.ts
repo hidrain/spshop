@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
     position: relative;
     grid-template-rows: max-content 1px max-content;
 
-    @media (min-width: 968px) {
+    @media (min-width: 1023px) {
         display: none
     }
 `

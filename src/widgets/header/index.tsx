@@ -14,9 +14,6 @@ const Header = (props: Props) => {
     const [click, setClick] = useState(false)
     const { products } = useSelector(selectCart)
 
-    console.log(click)
-    console.log(products.length)
-
     useEffect(() => {
         if (products.length === 0) {
             setClick(false)
