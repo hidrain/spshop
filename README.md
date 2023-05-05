@@ -1,4 +1,4 @@
-# KODE Frontend Trainee Test Task 2022
+# SBSHOP
 
 ### Tech stack
 
