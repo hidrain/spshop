@@ -5,10 +5,9 @@ import { Wrapper, Ellipse } from './style'
 type Props = {
     click: boolean,
     setClick: (click: boolean) => void,
-
 }
 
-export const CartWithCounter = ({ click, setClick }: Props) => {
+const CartWithCounter = ({ click, setClick }: Props) => {
 
     const { products } = useSelector(selectCart)
     const totalCount = products.reduce((sum, item) => sum + item.count, 0)
@@ -56,4 +55,6 @@ export const CartWithCounter = ({ click, setClick }: Props) => {
         </Wrapper>
     )
 }
+
+export default CartWithCounter
 

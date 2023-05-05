@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BurgerCart, HeaderWrapper } from './style'
 import Logo from 'shared/ui/logo/logo.svg'
 import { Link } from 'react-router-dom'
-import { CartWithCounter } from 'features/ui/cartWithCounter'
+import CartWithCounter from 'features/ui/cartWithCounter'
 import ModalCartBlock from 'widgets/modalCartBlock'
 import { selectCart } from 'shared/api/cartSlice'
 import { useSelector } from 'react-redux'
@@ -22,8 +22,6 @@ const Header = (props: Props) => {
             setClick(false)
         }
     }, [products.length])
-
-
 
     return (
         <HeaderWrapper>
