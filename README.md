@@ -1,4 +1,4 @@
-# SBSHOP
+# SPSHOP
 
 ### Tech stack
 
